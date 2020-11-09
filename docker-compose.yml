@@ -1,0 +1,16 @@
+version: '3'
+services:
+  h2:
+    build: .
+    volumes:
+      - h2:/opt/h2/data
+    ports:
+      - 5435:5435
+      - 8082:8082      
+      - 9092:9092
+    environment:
+      - H2_OPTIONS=-ifNotExists
+volumes:
+  h2:
+    driver: local
+  
